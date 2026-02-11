@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gibson Wills | Class of 2027 Kicker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #132238;
+      --gold: #c9a227;
+      --gold-light: #e8c547;
+      --white: #ffffff;
+      --gray: #94a3b8;
+      --gray-dark: #475569;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background:
+        linear-gradient(135deg, rgba(10, 22, 40, 0.97) 0%, rgba(19, 34, 56, 0.95) 100%),
+        radial-gradient(ellipse at 20% 80%, rgba(201, 162, 39, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(201, 162, 39, 0.03) 50px, rgba(201, 162, 39, 0.03) 51px),
+        repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(201, 162, 39, 0.03) 50px, rgba(201, 162, 39, 0.03) 51px);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: 1.3rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.25rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .video-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .video-thumbnail {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .video-card:hover .video-thumbnail img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .play-button::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 20px solid var(--navy);
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 5px;
+    }
+
+    .video-card:hover .play-button {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: var(--gold-light);
+    }
+
+    .video-info {
+      padding: 1.5rem;
+    }
+
+    .video-category {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-description {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Featured Video */
+    .featured-video {
+      background: var(--navy-light);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .featured-video .video-wrapper {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #000;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-video iframe,
+    .featured-video video {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .featured-label {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    /* Piano Section */
+    #piano {
+      background:
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 100%);
+    }
+
+    .piano-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .piano-content h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .piano-content h3 span {
+      color: var(--gold);
+    }
+
+    .piano-content p {
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .piano-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .piano-stat {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(201, 162, 39, 0.1);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      flex: 1;
+    }
+
+    /* Academics Section */
+    #academics {
+      background: var(--navy-light);
+    }
+
+    .academics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .academic-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: var(--navy);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      transition: border-color 0.3s ease;
+    }
+
+    .academic-card:hover {
+      border-color: var(--gold);
+    }
+
+    .academic-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .academic-value {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .academic-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Contact Section */
+    #contact {
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      padding: 2rem;
+      background: var(--navy-light);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+    }
+
+    .contact-label {
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-value {
+      font-size: 1.1rem;
+    }
+
+    .contact-value a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-value a:hover {
+      color: var(--gold);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      padding: 1rem 2.5rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      margin-top: 3rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(201, 162, 39, 0.2);
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+
+      .piano-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .academics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">GW</a>
+      <ul class="nav-links">
+        <li><a href="#kicking">Kicking</a></li>
+        <li><a href="#piano">Piano</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-label">Class of 2027 • Florida</div>
+      <h1>Gibson <span>Wills</span></h1>
+      <p class="hero-tagline">Kicker • Scholar • Classical Pianist</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">#28</div>
+          <div class="stat-label">National Ranking</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">4.5★</div>
+          <div class="stat-label">Kohl's Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">4.5</div>
+          <div class="stat-label">GPA (Weighted)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">#2</div>
+          <div class="stat-label">Class Rank</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kicking Section -->
+  <section id="kicking">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">On The Field</div>
+        <h2 class="section-title">Kicking Highlights</h2>
+      </div>
+
+      <!-- Featured Video -->
+      <div class="featured-video">
+        <div class="featured-label">Featured</div>
+        <div class="video-wrapper">
+          <!-- Replace with actual YouTube embed or video file -->
+          <div style="width:100%;height:100%;background:linear-gradient(135deg, #132238, #0a1628);display:flex;align-items:center;justify-content:center;color:#94a3b8;">
+            <div style="text-align:center;">
+              <div style="font-size:3rem;margin-bottom:1rem;">▶</div>
+              <div>Embed Hudl or YouTube highlight reel here</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="video-title">2025 Season Highlights</h3>
+        <p class="video-description">Complete kicking and kickoff highlights from the 2025 season including game-winning field goals and touchbacks.</p>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a2d47, #0d1a2d);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:4rem;">🏈</span>
+            </div>
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-category">Kohl's Camp</div>
+            <div class="video-title">National Scholarship Camp 2025</div>
+            <p class="video-description">26 pts FG charting • 104.2 KO pts • Best: 73 yds / 3.7s hang</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a2d47, #0d1a2d);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:4rem;">🎯</span>
+            </div>
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-category">Training</div>
+            <div class="video-title">Field Goal Range Session</div>
+            <p class="video-description">Training session showcasing accuracy from 35-50+ yards with consistent technique.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a2d47, #0d1a2d);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:4rem;">💨</span>
+            </div>
+            <div class="play-button"></div>
+          </div>
+          <div class="video-info">
+            <div class="video-category">Kickoffs</div>
+            <div class="video-title">Kickoff Power & Hang Time</div>
+            <p class="video-description">Demonstrating 70+ yard kickoffs with 3.7+ second hang times.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Piano Section -->
+  <section id="piano">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Beyond The Field</div>
+        <h2 class="section-title">Classical Piano</h2>
+      </div>
+
+      <div class="piano-feature">
+        <div class="featured-video" style="margin-bottom:0;">
+          <div class="video-wrapper">
+            <!-- Replace with actual piano video embed -->
+            <div style="width:100%;height:100%;background:linear-gradient(135deg, #132238, #0a1628);display:flex;align-items:center;justify-content:center;color:#94a3b8;">
+              <div style="text-align:center;">
+                <div style="font-size:3rem;margin-bottom:1rem;">🎹</div>
+                <div>Piano recital video here</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="piano-content">
+          <h3>Discipline That <span>Transfers</span></h3>
+          <p>Over a decade of classical piano training has built the same mental framework required for clutch kicking: thousands of hours of deliberate practice, performing under pressure, and responding to coaching and critique.</p>
+          <p>The focus that allows me to perform a Chopin étude in front of an audience is the same focus that splits the uprights when the game is on the line.</p>
+          <div class="piano-stats">
+            <div class="piano-stat">
+              <div class="stat-value">10+</div>
+              <div class="stat-label">Years Training</div>
+            </div>
+            <div class="piano-stat">
+              <div class="stat-value">Expert</div>
+              <div class="stat-label">Qualification</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academics Section -->
+  <section id="academics">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">In The Classroom</div>
+        <h2 class="section-title">Academic Profile</h2>
+      </div>
+
+      <div class="academics-grid">
+        <div class="academic-card">
+          <div class="academic-icon">📚</div>
+          <div class="academic-value">4.5</div>
+          <div class="academic-label">Weighted GPA</div>
+        </div>
+        <div class="academic-card">
+          <div class="academic-icon">🏆</div>
+          <div class="academic-value">#2</div>
+          <div class="academic-label">Class Rank</div>
+        </div>
+        <div class="academic-card">
+          <div class="academic-icon">✓</div>
+          <div class="academic-value">Zero</div>
+          <div class="academic-label">Eligibility Concerns</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Contact Information</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:email@example.com">[Your Email]</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+1234567890">[Your Phone]</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Hudl</div>
+          <div class="contact-value"><a href="#">[Hudl Profile Link]</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Kohl's Profile</div>
+          <div class="contact-value"><a href="#">[Kohl's Link]</a></div>
+        </div>
+      </div>
+
+      <div class="contact-grid" style="margin-top:1rem;">
+        <div class="contact-card">
+          <div class="contact-label">Parent Contact</div>
+          <div class="contact-value">Bo Wills<br><a href="mailto:email@example.com">[Parent Email]</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">High School</div>
+          <div class="contact-value">[High School Name]<br>Florida</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Graduation</div>
+          <div class="contact-value">Class of 2027</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Position</div>
+          <div class="contact-value">Kicker / Punter</div>
+        </div>
+      </div>
+
+      <a href="mailto:email@example.com" class="cta-button">Request More Information</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Gibson Wills • Class of 2027 • Florida</p>
+  </footer>
+</body>
+</html>
