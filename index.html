@@ -118,6 +118,24 @@
       position: relative;
       z-index: 1;
       max-width: 900px;
+      width: 100%;
+    }
+
+    .hero-video-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 2rem;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 40px rgba(201, 162, 39, 0.2);
+      animation: fadeInDown 0.8s ease;
+      overflow: hidden;
+    }
+
+    .hero-video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
 
     .hero-label {
@@ -577,6 +595,14 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
+      <div class="hero-video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/SCopdj1XpNk?autoplay=1&mute=1&loop=1&playlist=SCopdj1XpNk&controls=1&rel=0"
+          title="Gibson Wills Highlight Video"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      </div>
       <div class="hero-label">Class of 2027 • Florida</div>
       <h1>Gibson <span>Wills</span></h1>
       <p class="hero-tagline">Kicker • Scholar • Classical Pianist</p>
